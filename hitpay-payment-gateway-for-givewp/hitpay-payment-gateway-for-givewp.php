@@ -2,14 +2,14 @@
 /**
  * Plugin Name: HitPay Payment Gateway for GiveWP
  * Description: HitPay Payment Gateway for GiveWP Plugin allows merchants to accept donations via PayNow QR, Cards, Apple Pay, Google Pay, WeChatPay, AliPay and GrabPay Payments. You will need a HitPay account, contact support@hitpay.zendesk.com
- * Version: 1.0.0
+ * Version: 1.0.2
  * Author: <a href="https://www.hitpayapp.com>HitPay Payment Solutions Pte Ltd</a>
  * Author URI: https://www.hitpayapp.com
  * License: MIT
  * Requires at least: 4.8
- * Tested up to: 6.4.2
+ * Tested up to: 6.4.3
  * GiveWP requires at least: 2.0
- * GiveWP tested up to: 3.4.0
+ * GiveWP tested up to: 3.6.1
  * Requires PHP: 5.5
  */
 
@@ -19,7 +19,7 @@ if (! defined('ABSPATH')) {
 }
 
 if (! defined('HITPAY_GIVE_VERSION')) {
-    define('HITPAY_GIVE_VERSION', '1.0.0');
+    define('HITPAY_GIVE_VERSION', '1.0.2');
 }
 
 if (! defined('HITPAY_GIVE_PLUGIN_URL')) {
@@ -43,9 +43,14 @@ if (!class_exists('ComposerAutoloaderInit2a7e2497cc6f77dc9a55e3abf95fd6ad')) {
 	require_once HITPAY_GIVE_PLUGIN_PATH . 'vendor/autoload.php';
 }
 
+add_action('givewp_register_payment_gateway', static function ($paymentGatewayRegister) {
+    require_once HITPAY_GIVE_PLUGIN_PATH . '/includes/class-hitpay-give-payment-gateway.php'; 
+    $paymentGatewayRegister->registerGateway(HitpayForGivewpClass::class);    
+});
+
 require_once HITPAY_GIVE_PLUGIN_PATH . '/includes/admin/hitpay-give-activation.php';
 require_once HITPAY_GIVE_PLUGIN_PATH . '/includes/admin/hitpay-give-admin.php';
-require_once HITPAY_GIVE_PLUGIN_PATH . '/includes/hitpay-give-payment-gateway.php';
+//require_once HITPAY_GIVE_PLUGIN_PATH . '/includes/hitpay-give-payment-gateway.php';
 
 /**
  * Register Payment Gateway.
@@ -64,7 +69,7 @@ function hitpay_give_register_gateway($gateways)
     return $gateways;
 }
 
-add_filter('give_payment_gateways', 'hitpay_give_register_gateway');
+//add_filter('give_payment_gateways', 'hitpay_give_register_gateway');
 
 function hitpay_give_redirect_notice($form_id)
 {
@@ -80,5 +85,5 @@ function hitpay_give_redirect_notice($form_id)
     return true;
 }
 
-add_action('give_hitpay_cc_form', 'hitpay_give_redirect_notice');
+//add_action('give_hitpay_cc_form', 'hitpay_give_redirect_notice');
 

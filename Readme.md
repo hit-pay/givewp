@@ -80,5 +80,8 @@ And merchant need to copy the API keys and Salt values from the HitPay Web Dashb
 
 == Changelog ==
 
+= 1.0.2 =
+* Updated to compatible with Visual Form Builder Forms
+
 = 1.0.0 =
 * Initial release.
