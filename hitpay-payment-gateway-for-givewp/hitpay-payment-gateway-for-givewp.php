@@ -2,7 +2,7 @@
 /**
  * Plugin Name: HitPay Payment Gateway for GiveWP
  * Description: HitPay Payment Gateway for GiveWP Plugin allows merchants to accept donations via PayNow QR, Cards, Apple Pay, Google Pay, WeChatPay, AliPay and GrabPay Payments. You will need a HitPay account, contact support@hitpay.zendesk.com
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: <a href="https://www.hitpayapp.com>HitPay Payment Solutions Pte Ltd</a>
  * Author URI: https://www.hitpayapp.com
  * License: MIT
@@ -40,7 +40,9 @@ if (! defined('HITPAY_GIVE_BASENAME')) {
 
 if (!class_exists('ComposerAutoloaderInit2a7e2497cc6f77dc9a55e3abf95fd6ad')) {
 	require_once HITPAY_GIVE_PLUGIN_PATH . 'vendor/softbuild/hitpay-sdk/src/CurlEmulator.php';
-	require_once HITPAY_GIVE_PLUGIN_PATH . 'vendor/autoload.php';
+	if (!class_exists('\HitPay\Client')) {
+		require_once HITPAY_GIVE_PLUGIN_PATH . 'vendor/autoload.php';
+	}
 }
 
 add_action('givewp_register_payment_gateway', static function ($paymentGatewayRegister) {
