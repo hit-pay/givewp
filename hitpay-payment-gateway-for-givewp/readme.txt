@@ -1,6 +1,15 @@
-# HitPay ![Logo](hitpay-payment-gateway-for-givewp/assets/images/logo.png)
+=== HitPay Payment Gateway for GiveWP ===
+Contributors: HitPay
+Tags: hitpay payments, GiveWP, payment gateway, hitpay, pay with hitpay, credit card, paynow, wechatpay, alipay
+Requires at least: 4.0
+Tested up to: 6.5.2
+Stable tag: 1.0.4
+Requires PHP: 5.5
+GiveWP requires at least: 2.0
+GiveWP tested up to: 3.7.0
+License: MIT
 
-== HitPay Payment Gateway for GiveWP ==
+HitPay Payment Gateway for GiveWP Plugin allows merchants to accept donations via PayNow QR, Cards, Apple Pay, Google Pay, WeChatPay, AliPay and GrabPay Payments
 
 == Description ==
 
@@ -40,6 +49,10 @@ And merchant need to copy the API keys and Salt values from the HitPay Web Dashb
 3. Upload the `hitpay-payment-gateway-for-givewp` directory to the `/wp-content/plugins/` directory
 4. Activate the plugin in the Plugin dashboard
 
+= Updating =
+
+Automatic updates should work like a charm; as always though, ensure you backup your site just in case.
+
 == Configuration ==
 
 1. Go to Donations settings
@@ -49,34 +62,27 @@ And merchant need to copy the API keys and Salt values from the HitPay Web Dashb
 5. Click the link 'HitPay Payment Gateway' under the tabs
 6. Copy the API keys and Salt values from the HitPay Web Dashboard under Settings > Payment Gateway > API Keys
 7. Click "Save Changes"
+9. All done!
 
+== Frequently Asked Questions ==
 
-![](hitpay-payment-gateway-for-givewp/assets/screenshots/1-plugin-settings-1.png)
+= Do I need an API key? =
 
-![](hitpay-payment-gateway-for-givewp/assets/screenshots/1-plugin-settings-2.png)
+Yes. You can copy the API keys and Salt values from the HitPay Web Dashboard under Settings > Payment Gateway > API Keys.
 
-== Donation ==
+= Where can I find more documentation on your service? =
 
-![](hitpay-payment-gateway-for-givewp/assets/screenshots/2-checkout-page-1.png)
+You can find more documentation about our service on our [get started](https://hitpay.zendesk.com/hc/en-us/sections/360002421091-About-HitPay) page.
+If there's anything else you need that is not covered on those pages, please get in touch with us, we're here to help you!
 
-![](hitpay-payment-gateway-for-givewp/assets/screenshots/2-checkout-page-2.png)
+= Where can I get support? =
 
-![](hitpay-payment-gateway-for-givewp/assets/screenshots/2-checkout-page-3.png)
+The easiest and fastest way is via our live chat on our [website](https://www.hitpayapp.com/) or via our [contact form](https://www.hitpayapp.com/contactus).
 
-![](hitpay-payment-gateway-for-givewp/assets/screenshots/2-checkout-page-4.png)
+== Screenshots ==
 
-== Refunds ==
-
-1. Log in to Admin
-2. Navigate to Donations ⇒ Donations
-3. Click edit link to navigate to Donation Payment Details page
-4. If donation is paid via 'HitPay Payment Gateway' then the button 'Refund via HitPay Payment Gateway' will be displayed as attached screen:
-![](hitpay-payment-gateway-for-givewp/assets/screenshots/3-Refund-1.png)
-5. If gateway accepted the refund request and the Refund details will be added to donation payment note.
-6. Only one refund is allowed per transaction.
-7. Refund is only applicable if the initial charge was made with PayNow or Card.
-![](hitpay-payment-gateway-for-givewp/assets/screenshots/3-Refund-2.png)
-
+1. The settings panel used to configure the gateway.
+2. Pay donation with HitPay Payment Gateway.
 
 == Changelog ==
 
@@ -87,8 +93,10 @@ And merchant need to copy the API keys and Salt values from the HitPay Web Dashb
 * Plugin tested on WordPress 6.5.2
 
 = 1.0.3 =
+* Apr 02, 2024
 * Resolved conflict error with hitpay for woocommerce plugin
 * Plugin tested on upto GiveWp 3.6.1
+* Plugin tested on WordPress 6.4.3
 
 = 1.0.2 =
 * Updated to compatible with Visual Form Builder Forms

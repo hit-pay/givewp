@@ -132,7 +132,8 @@ class HitpayForGivewpClass extends PaymentGateway
 				->setCurrency($currency_code)
 				->setReferenceNumber($payment_id)
 				->setWebhook($webhook)
-				->setRedirectUrl($redirect_url);
+				->setRedirectUrl($redirect_url)
+				->setChannel('api_woocomm');
 				
 			$cust_first_name = $donation->firstName;
 			$cust_last_name  = $donation->lastName;
@@ -496,7 +497,8 @@ class HitpayForGivewpClass extends PaymentGateway
 				->setCurrency($currency_code)
 				->setReferenceNumber($payment_id)
 				->setWebhook($webhook)
-				->setRedirectUrl($redirect_url);
+				->setRedirectUrl($redirect_url)
+				->setChannel('api_woocomm');
 				
 			$cust_first_name = isset($payment_data['user_info']['first_name']) ? $payment_data['user_info']['first_name'] : '';
 			$cust_last_name  = isset($payment_data['user_info']['last_name']) ? $payment_data['user_info']['last_name'] : '';
